@@ -1,0 +1,17 @@
+ k = 0:4000; 
+ w = (pi/100)*k; 
+ X = freqz(num,den,w); 
+ magX = abs(X); 
+ plot(w/pi,magX,'r','LineWidth',1.5); 
+ title('Frequency Respone Of IIR Notch Filter'); 
+ xlabel('Frequency In Pi Units ---->'); ylabel('Magnitude'); 
+ [xs,fs]=audioread('silence.wma'); 
+ whos; 
+ subplot(4,1,1);
+ plot(xs(1:2205)); 
+ subplot(4,1,2);
+ plot(xs(2206:2206+2205)); 
+ subplot(4,1,3);
+ plot(xs(2206+2206:2206+2206+2205)); 
+ subplot(4,1,4);
+ plot(xs);   
